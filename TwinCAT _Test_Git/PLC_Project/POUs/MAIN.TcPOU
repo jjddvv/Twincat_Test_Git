@@ -5,11 +5,15 @@
 VAR
 	VarOut AT %Q*: BOOL;
 	VarIn AT %I*: BOOL;
+	VarOut2 AT %Q*: BOOL;
+	VarIn2 AT %I*: BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[VarOut := VarIn;
-]]></ST>
+      <ST><![CDATA[// Comentario
+VarOut := VarIn;
+VarOut2 := VarIn2;
+PROG2();]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

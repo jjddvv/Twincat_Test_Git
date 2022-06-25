@@ -10,11 +10,19 @@
 					<Name>MAIN.VarIn</Name>
 					<Type>BOOL</Type>
 				</Var>
+				<Var>
+					<Name>MAIN.VarIn2</Name>
+					<Type>BOOL</Type>
+				</Var>
 			</Vars>
 			<Vars VarGrpType="2" AreaNo="1">
 				<Name>PlcTask Outputs</Name>
 				<Var>
 					<Name>MAIN.VarOut</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>MAIN.VarOut2</Name>
 					<Type>BOOL</Type>
 				</Var>
 			</Vars>
@@ -38,6 +46,7 @@
 		<OwnerA Name="PLC_Project Instance">
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Box 2 (EP2318-0001)">
 				<Link VarA="PlcTask Inputs^MAIN.VarIn" VarB="Channel 1^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^MAIN.VarIn2" VarB="Channel 3^Input" Size="1"/>
 				<Link VarA="PlcTask Outputs^MAIN.VarOut" VarB="Channel 5^Output" Size="1"/>
 			</OwnerB>
 		</OwnerA>
