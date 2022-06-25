@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.5">
+  <POU Name="MAIN" Id="{265004ad-ee78-4b56-a154-346e846c21bb}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	VarOut AT %Q*: BOOL;
+	VarIn AT %I*: BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[VarOut := VarIn;
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
