@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.5">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
   <POU Name="MAIN" Id="{265004ad-ee78-4b56-a154-346e846c21bb}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
@@ -13,7 +13,9 @@ END_VAR
       <ST><![CDATA[// Comentario
 VarOut := VarIn;
 VarOut2 := VarIn2;
-PROG2();]]></ST>
+PROG2();
+// cambio a 21.38
+]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
