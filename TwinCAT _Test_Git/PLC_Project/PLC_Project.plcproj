@@ -26,13 +26,10 @@
     <Compile Include="POUs\MAIN.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Main_References.TcPOU">
+    <Compile Include="POUs\Main_PULSO.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\POU.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\PROG2.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\References.TcPOU">

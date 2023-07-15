@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="MAIN_GENERAR_POLS" Id="{f3990073-cdee-4b91-839f-e2718e4d2efa}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN_GENERAR_POLS
+VAR
+	VARIABLE_A_PULSAR: BOOL;
+	GENERA_POLS: BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[VARIABLE_A_PULSAR := GENERAR_POLS(Pols_ON:= GENERA_POLS, Temps_pols:= T#2000ms);
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

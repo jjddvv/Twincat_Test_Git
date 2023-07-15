@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
-  <POU Name="Main_References" Id="{798458ac-4395-4b9c-b3a3-1574ea558408}" SpecialFunc="None">
-    <Declaration><![CDATA[PROGRAM Main_References
+  <POU Name="Main_PULSO" Id="{798458ac-4395-4b9c-b3a3-1574ea558408}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM Main_PULSO
+// HAY QUE HACER UN OBJETO DE CADA FUNCTION BLOCK PARA CADA VARIABLE
 VAR
 	Variable_a_pulsar: BOOL;
 	Variable_a_pulsar_1: BOOL;
@@ -27,7 +28,7 @@ CASE paso  OF
 
 20:
 FB_PULSO_1(Referencia_a_variable_a_Pulsar := Variable_a_pulsar , Temps_pols := T#4S );    	
-FB_PULSO_1(Referencia_a_variable_a_Pulsar := Variable_a_pulsar_1 , Temps_pols := T#4S );
+// FB_PULSO_1(Referencia_a_variable_a_Pulsar := Variable_a_pulsar_1 , Temps_pols := T#4S );
 //ADSLOGDINT(msgCtrlMask:= ADSLOG_MSGTYPE_LOG, msgFmtStr := 'Paso Actual 20: %d', dintArg := Paso);
 
 END_CASE	]]></ST>
