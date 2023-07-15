@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_PULSO" Id="{f1be071e-2f7f-4244-a6bd-f3b5b92b5e9f}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_PULSO
+VAR_INPUT
+	Referencia_a_variable_a_Pulsar: REFERENCE TO BOOL;
+	Temps_pols : TIME;	
+END_VAR
+VAR_OUTPUT
+
+END_VAR
+VAR
+	TP1: TP;
+	Activar_TP1 : BOOL;
+	Temps : TIME;
+	Temps_actual_pols : TIME;
+	Variable_pulsdada : BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[   
+
+
+
+     TP1(IN:= Referencia_a_variable_a_Pulsar , PT:=  Temps_pols, Q=> Variable_pulsdada   , ET=> Temps_actual_pols  );
+	IF TP1.ET = TP1.PT THEN Referencia_a_variable_a_Pulsar := FALSE ;
+		// <
+	END_IF
+	 ]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

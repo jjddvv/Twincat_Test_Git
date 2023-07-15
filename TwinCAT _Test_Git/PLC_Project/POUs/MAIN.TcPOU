@@ -7,14 +7,38 @@ VAR
 	VarIn AT %I*: BOOL;
 	VarOut2 AT %Q*: BOOL;
 	VarIn2 AT %I*: BOOL;
+	Paso: INT;
+	SALTO_A_30: BOOL;
+
+	SALTO_A_10: BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[// Comentario
-VarOut := VarIn;
-VarOut2 := VarIn2;
-PROG2();
-// cambio a 21.38
+
+     //ADSLOGDINT(msgCtrlMask:= ADSLOG_MSGTYPE_LOG, msgFmtStr := 'PLC Msg: Feed too high! Current feed: %d', dintArg := Paso);
+ ADSLOGDINT(msgCtrlMask:= ADSLOG_MSGTYPE_LOG, msgFmtStr := 'Paso Actual: %d', dintArg := Paso);
+CASE Paso OF
+	10:
+     ADSLOGSTR(msgCtrlMask:= ADSLOG_MSGTYPE_LOG, msgFmtStr := 'EN PASO 10' , strArg := ' '); 
+     Paso := 20;
+	
+	20:
+	
+	 IF SALTO_A_30 THEN
+		 ADSLOGSTR(msgCtrlMask:= ADSLOG_MSGTYPE_LOG, msgFmtStr := 'SALTO A 30' , strArg := ' ');
+		 Paso := 30;
+	 END_IF
+	  IF SALTO_A_10 THEN
+		 ADSLOGSTR(msgCtrlMask:= ADSLOG_MSGTYPE_LOG, msgFmtStr := 'SALTO A 10' , strArg := ' ');
+		 Paso := 10;
+	  ELSE
+	      ADSLOGSTR(msgCtrlMask:= ADSLOG_MSGTYPE_LOG, msgFmtStr := 'ELSE PASO 20' , strArg := ' ');
+		  END_IF
+		   
+	30:
+	     ADSLOGSTR(msgCtrlMask:= ADSLOG_MSGTYPE_LOG, msgFmtStr := 'EN PASO 30' , strArg := ' ');
+END_CASE
 ]]></ST>
     </Implementation>
   </POU>

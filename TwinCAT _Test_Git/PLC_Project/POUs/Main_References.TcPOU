@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="Main_References" Id="{798458ac-4395-4b9c-b3a3-1574ea558408}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM Main_References
+VAR
+	Variable_a_pulsar: BOOL;
+	Variable_a_pulsar_1: BOOL;
+	FB_PULSO_1: FB_PULSO;
+	paso: INT;
+	FB_PULSO_2: FB_PULSO;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[//ADSLOGDINT(msgCtrlMask:= ADSLOG_MSGTYPE_LOG, msgFmtStr := 'Paso Actual Inicio: %d', dintArg := Paso);
+
+CASE paso  OF
+
+
+10:
+//IF Variable_a_pulsar = TRUE THEN  
+	FB_PULSO_1(Referencia_a_variable_a_Pulsar := Variable_a_pulsar , Temps_pols := T#4S );
+	ADSLOGDINT(msgCtrlMask:= ADSLOG_MSGTYPE_LOG, msgFmtStr := 'Paso Actual 10: %d', dintArg := Paso);
+	FB_PULSO_2(Referencia_a_variable_a_Pulsar := Variable_a_pulsar_1, Temps_pols := T#10S );
+//END_IF
+
+//paso := 20;
+
+20:
+FB_PULSO_1(Referencia_a_variable_a_Pulsar := Variable_a_pulsar , Temps_pols := T#4S );    	
+FB_PULSO_1(Referencia_a_variable_a_Pulsar := Variable_a_pulsar_1 , Temps_pols := T#4S );
+//ADSLOGDINT(msgCtrlMask:= ADSLOG_MSGTYPE_LOG, msgFmtStr := 'Paso Actual 20: %d', dintArg := Paso);
+
+END_CASE	]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="References" Id="{e34f16b5-f2f1-4556-a823-2e34d9d9e0b9}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM References
+VAR
+	nVar      : INT;
+    refInt1   : REFERENCE TO INT;
+    refInt2   : REFERENCE TO INT;
+    bTestRef1 : BOOL := FALSE;
+    bTestRef2 : BOOL := FALSE;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[//nVar       := nVar + 1;
+refInt1  REF= nVar;
+refInt2  REF= 0;
+//bTestRef1  := __ISVALIDREF(refInt1); (* becomes TRUE, because refInt1 points to nVar, which is non-zero *)
+//bTestRef2  := __ISVALIDREF(refInt2); (* becomes FALSE, because refInt2 is set to 0 *)]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

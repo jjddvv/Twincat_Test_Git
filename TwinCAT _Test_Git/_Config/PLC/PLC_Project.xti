@@ -1,34 +1,25 @@
 <?xml version="1.0"?>
-<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.11" ClassName="CNestedPlcProjDef">
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.47" ClassName="CNestedPlcProjDef">
 	<Project GUID="{DCDCD9CE-B17D-4242-AC82-B457A29E517F}" Name="PLC_Project" PrjFilePath="..\..\PLC_Project\PLC_Project.plcproj" TmcFilePath="..\..\PLC_Project\PLC_Project.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2">
+		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="PLC_Project\PLC_Project.tmc" TmcHash="{CD9FD754-B8DA-95B9-3B27-F6BD6E6BB054}">
 			<Name>PLC_Project Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
-			<Vars VarGrpType="1">
-				<Name>PlcTask Inputs</Name>
-				<Var>
-					<Name>MAIN.VarIn</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.VarIn2</Name>
-					<Type>BOOL</Type>
-				</Var>
-			</Vars>
-			<Vars VarGrpType="2" AreaNo="1">
-				<Name>PlcTask Outputs</Name>
-				<Var>
-					<Name>MAIN.VarOut</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.VarOut2</Name>
-					<Type>BOOL</Type>
-				</Var>
-			</Vars>
+			<UnrestoredVarLinks ImportTime="2023-07-14T21:34:16">
+				<OwnerA Name="InputDst" Prefix="TIPC^PLC_Project^PLC_Project Instance" Type="1">
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^Box 2 (EP2318-0001)">
+						<Link VarA="MAIN.VarIn" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="MAIN.VarIn2" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 3^Input" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+				</OwnerA>
+				<OwnerA Name="OutputSrc" Prefix="TIPC^PLC_Project^PLC_Project Instance" Type="2">
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^Box 2 (EP2318-0001)">
+						<Link VarA="MAIN.VarOut" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 5^Output" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+				</OwnerA>
+			</UnrestoredVarLinks>
 			<Contexts>
 				<Context>
-					<Id NeedCalleeCall="true">0</Id>
+					<Id>0</Id>
 					<Name>PlcTask</Name>
 					<ManualConfig>
 						<OTCID>#x02010040</OTCID>
@@ -42,13 +33,4 @@
 			</TaskPouOids>
 		</Instance>
 	</Project>
-	<Mappings>
-		<OwnerA Name="PLC_Project Instance">
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^Box 2 (EP2318-0001)">
-				<Link VarA="PlcTask Inputs^MAIN.VarIn" VarB="Channel 1^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^MAIN.VarIn2" VarB="Channel 3^Input" Size="1"/>
-				<Link VarA="PlcTask Outputs^MAIN.VarOut" VarB="Channel 5^Output" Size="1"/>
-			</OwnerB>
-		</OwnerA>
-	</Mappings>
 </TcSmItem>
