@@ -15,7 +15,7 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[// Comentario
-
+Cambios a las 23 52	
      //ADSLOGDINT(msgCtrlMask:= ADSLOG_MSGTYPE_LOG, msgFmtStr := 'PLC Msg: Feed too high! Current feed: %d', dintArg := Paso);
  ADSLOGDINT(msgCtrlMask:= ADSLOG_MSGTYPE_LOG, msgFmtStr := 'Paso Actual: %d', dintArg := Paso);
 CASE Paso OF
